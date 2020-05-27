@@ -118,5 +118,5 @@ modified_data_array = np.concatenate(
 # modified_data_array = modified_data_array.astype(int)
 print('final data')
 print(modified_data_array)
-np.savetxt("data_processedv2.csv", modified_data_array, delimiter=",", fmt="%d")
+np.savetxt("data_processedv3.csv", modified_data_array, delimiter=",", fmt="%d")
 
