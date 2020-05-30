@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv('condo_by_area_test.csv')
+# data = pd.read_csv('./to_downtown_condo/step2_needs_process/toronto_condo_to/process.csv')
+data = pd.read_csv('~/Documents/dev/csv_preprocess/to_downtown_condo/step2_needs_process/toronto_condo_to_process.csv')
+
 # Specify label column name here
 
 col_fill_name = ['PARK','Bay Street','Dufferin Grove','Kensington / China town','Little Portugal','Niagara','Palmerston / Little Italy','Trinity Bellwoods','University','Waterfront']
@@ -77,6 +79,7 @@ print('---------------------------------------------------')
 modified_data = modified_data.drop(useless_cols, axis=1)
 print(modified_data.head())
 print('---------------------------------------------------')
+print('---------------------------------------------------')
 
 # One hot encode and fill missing values
 from sklearn.pipeline import Pipeline
@@ -110,13 +113,22 @@ preprocessor.fit(data_without_label)
 modified_data_without_label = preprocessor.transform(data_without_label)
 if (type(modified_data_without_label) is not np.ndarray):
     modified_data_without_label = modified_data_without_label.toarray()
+print('---------------------------------------------------')
+print('---------------------------------------------------')
+print('---------------------------------------------------')
 print('processed data')
+print('---------------------------------------------------')
 print(modified_data_without_label)
 modified_data_array = np.concatenate(
     (np.array(modified_data[label]).reshape(-1, 1),
      modified_data_without_label), axis=1)
 # modified_data_array = modified_data_array.astype(int)
+print('---------------------------------------------------')
 print('final data')
+print('---------------------------------------------------')
+
 print(modified_data_array)
-np.savetxt("data_processedv3.csv", modified_data_array, delimiter=",", fmt="%d")
+# try np.savetxt with absolute path
+np.savetxt("./to_downtown_condo/processed/data_processedv3.csv", modified_data_array, delimiter=",", fmt="%d")
+# np.savetxt("~/Documents/dev/csv_preprocess/to_downtown_condo/data_processedv3.csv", modified_data_array, delimiter=",", fmt="%d")
 
