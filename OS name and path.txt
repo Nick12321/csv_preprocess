@@ -1,0 +1,11 @@
+"""
+if platform == "linux" or platform == "linux2":
+    path_from="~/Documents/dev/csv_preprocess/to_downtown_condo/step2_needs_process/toronto_condo_to_process.csv"
+    path_to="~/Documents/dev/csv_preprocess/to_downtown_condo/processed/data_processedv4.csv"
+# elif platform == "darwin":
+    # OS X
+elif platform == "win32":
+    path_from="C:\Users\nick\Documents\dev\csv_preprocess\to_downtown_condo\step2_needs_process\toronto_condo_to_process.csv"
+    path_to="C:\Users\nick\Documents\dev\csv_preprocess\to_downtown_condo\processed\data_processedv4.csv"
+    
+# data = pd.read_csv('./to_downtown_condo/step2_needs_process/toronto_condo_to/process.csv') """
