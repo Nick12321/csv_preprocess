@@ -8,4 +8,33 @@ elif platform == "win32":
     path_from="C:\Users\nick\Documents\dev\csv_preprocess\to_downtown_condo\step2_needs_process\toronto_condo_to_process.csv"
     path_to="C:\Users\nick\Documents\dev\csv_preprocess\to_downtown_condo\processed\data_processedv4.csv"
     
-# data = pd.read_csv('./to_downtown_condo/step2_needs_process/toronto_condo_to/process.csv') """
+
+Dropping rows research
+
+df = pd.DataFrame(np.arange(12).reshape(3, 4),
+
+                  columns=['A', 'B', 'C', 'D'])
+
+df
+   A  B   C   D
+0  0  1   2   3
+1  4  5   6   7
+2  8  9  10  11
+
+df.drop(['B', 'C'], axis=1)
+   A   D
+0  0   3
+1  4   7
+2  8  11
+
+df.drop([0, 1])
+   A  B   C   D
+2  8  9  10  11
+
+***********
+delete_row = df[df.iloc[:,1]==0].index
+df = df.drop(delete_row)
+
+https://stackoverflow.com/questions/53182464/pandas-delete-a-row-in-a-dataframe-based-on-a-value
+***********
+

@@ -14,7 +14,8 @@ elif platform == "win32":
 col_fill_name = ['BEDS','PARK','Bay Street','Dufferin Grove','Kensington / China town','Little Portugal','Niagara','Palmerston / Little Italy','Trinity Bellwoods','University','Waterfront']
 for name in col_fill_name:
     data[name] = data[name].fillna(0).astype('int64')
-    
+
+print(data.shape)    
 for i in range(0,len(data['SQFT'])):
      cell = str(data.at[i,'SQFT'])
      values = cell.split('-')
